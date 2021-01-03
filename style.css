@@ -1,0 +1,136 @@
+html{
+    scroll-behavior: smooth;
+    background-image: url("../images/b.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
+}
+
+#navbar{
+    z-index: auto;
+    padding-top: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar_cell{
+    float: left;
+    width: 18vw;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10vh;
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article 
+{
+    /* border: 10px solid black; */
+    padding-left: 10vw;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding-right: 10vw;
+}
+
+.article header{
+    z-index: 3;
+    background-image: url("../images/f.jpg");
+    opacity: 0.8;
+	font-size: xxx-large;
+	background-size: cover;
+	border-radius: 10vh;
+	display: flex;
+	position: relative;
+	top: 50px;
+	min-height: 100px;
+	justify-content: center;
+	align-items: center;
+	border-style: solid;
+	box-shadow: 3px 3px 3px #000000;
+	/* z-index: -1; later handler it with js po najechaniu myszka */
+}
+
+.article_content{
+	z-index: 2;
+    background-image: url("../images/e.jpg");
+    opacity: 0.8;
+	font-size: x-large;
+	background-size: cover;
+	background-color: violet;
+	border-radius: 10vh;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	padding-top: 1vh+50px;
+	padding-bottom: 1vh;
+    box-shadow: 30px 30px 30px #000000;
+    text-align: center;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+    text-align: center;
+}
+
+.article_text{
+    padding-top: 50px;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#equation{
+    height: 30%;
+    width: 30%;
+}
+
+
+
+/* first law animation */
+.animation{
+    z-index: 2;
+    background-color: white;
+	border-radius: 10vh;
+    box-shadow: 30px 30px 30px #000000;
+    width: 1100px;
+    height: fit-content;
+    margin: auto;
+    margin-top: 10vh;
+}
+
+#introduce_first_law{
+    margin-left:21% ;
+    float: left;
+    width: 19%;
+    margin-top: 14%;
+}
+#first_law_picture{
+    padding-top: 10%;
+    width: 55%;
+    margin-left: 45%;
+}
+#first_law_animation{
+    clear: both;
+    text-align: center;
+}
+#form{
+    padding-left: 10px;
+}
+
+#form2,#secondLawAnimation{
+    text-align: center;
+    padding-top: 20px;
+}
