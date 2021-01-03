@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Project TI - Kepler's laws</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="main.js"></script>
+    </head>
+
+    <body onload="init()">
+        <div id="page-container">
+            <div id="content-wrap">
+              <div id = "navbar">
+                  <div class = "navbar_cell" id = "option_1">
+                    <a href="#header1">Wstęp</a>
+                  </div>
+
+                  <div class = "navbar_cell" id = "option_2">
+                    <a href="#header2">I prawo Keplera</a>
+                  </div>
+
+                  <div class = "navbar_cell" id = "option_3">
+                    <a href="#header3">II prawo Keplera</a>
+                  </div>
+
+                  <div class = "navbar_cell" id = "option_4">
+                    <a href="#header4">III prawo Keplera</a>
+                  </div>
+
+                  <div class = "navbar_cell" id = "option_5">
+                    <a href="">Animacje</a>
+                  </div>
+              </div>
+              <div id = "content">
+                <!------------------------------->
+                <article class = "article">
+                    <header id="header1">Wstęp</header>
+                    <div class = "article_content" id = "introduction">
+                    <p class = "article_text">
+                      Odkrycie Keplera, że zarówno planety w Układzie Słonecznym,
+                       jak i księżyce w układzie Jowisza krążą wokół ciała centralnego 
+                       po orbitach eliptycznych, było mocnym potwierdzeniem teorii 
+                       heliocentrycznej Kopernika, dając zarazem niespotykaną dotąd 
+                       zgodność obliczeń z obserwacjami. Było także definitywnym zerwaniem 
+                       z pitagorejskim kanonem, zgodnie z którym prostota i elegancja opisu 
+                       ruchu polegała na jego „rozłożeniu” na ruchy jednostajne po okręgu.
+                    </p>  
+                    </div>
+                </article>
+                <!------------------------------->
+                <article class = "article">
+                    <header id="header2">I prawo Keplera</header>
+                    <div class = "article_content" id = "first_law">
+                    <p class = "article_text">
+                      "Każda planeta krąży po orbicie eliptycznej, a Słońce znajduje się w jednym z dwóch ognisk elipsy."
+                    </p>
+                    <p class = "article_text">
+                      Elipsę można opisać na kilka sposobów, w astronomii najczęściej opisuje 
+                      się elipsy, podając ich wielką półoś(a) oraz mimośród (e), 
+                       który określa stopień wydłużenia elipsy im e bliższe zeru,
+                        tym elipsa bliższa jest okręgowi).
+                        Mimośrody orbit planet w naszym układzie są w większości niewielkie. 
+                        Poza Merkurym, dla którego mimośród przekracza nieco wartość 0,2, 
+                        mimośrody orbit pozostałych planet są poniżej 0,1. 
+                        Na przykład mimośród elipsy orbity Ziemi wynosi 0,0167, co oznacza,
+                         że wielka oś elipsy orbity Ziemi jest dłuższa od krótkiej osi niewiele
+                          więcej niż 1% jej długości.
+                    </p>  
+                    </div>
+                </article>
+                <div class = animation>
+                  <div>
+                    <div id = "introduce_first_law">
+                        <div id = "form">
+                            <p>
+                                półoś wielka (a) : <input type="range" min="0" max="500" value="150" class="slider" id="a_range"> <b id = "slider_a_value"></b>
+                            </p>
+                            <p>
+                                półoś mała (b) &nbsp;&nbsp;: <input type="range" min="0" max="300" value="150" class="slider" id="b_range"> <b id = "slider_b_value"></b>
+                            </p>
+                            <p>
+                              Wartość mimośrodu (e) &nbsp;&nbsp;: <b id = "mimosrod"></b>
+                            </p>
+                            <p>
+                                Słońce w ognisku F1 : <input type="checkbox" name="check" id="ognisko_f1" onclick="onlyOne(this)">
+                            </p>
+                            <p>
+                                Słońce w ognisku F1 : <input type="checkbox" name="check" id="ognisko_f2" onclick="onlyOne(this)" >
+                            </p>
+                        </div>
+                    </div>
+                    <div id = "first_law_picture">
+                        <img src="../images/elipsa.png" style="height: 60%;width: 60%;">    
+                    </div>
+                </div>
+              <div id = "first_law_animation">
+                  <canvas id="canvas" width="1050" height="650"></canvas>
+              </div>
+              </div>
+                <!------------------------------->
+                <article class = "article">
+                    <header id="header3">II prawo Keplera</header>
+                    <div class = "article_content" id = "second_law">
+                      <p class = "article_text">
+                        "Promień wodzący poprowadzony ze środka Słońca do środka planety zakreśla równe pola powierzchni w równych odstępach czasu."
+                      </p>
+                      <p class = "article_text">
+                        Wynika stąd, że w peryhelium (w pobliżu Słońca) planeta porusza się szybciej niż
+                        w aphelium (daleko od Słońca), czyli planeta w ciągu takiego samego czasu przebywa
+                        dłuższą drogę w pobliżu peryhelium, niż w pobliżu aphelium.
+                        Na przykład dla orbity Ziemi e = 0,01672,
+                        prędkość liniowa Ziemi w peryhelium wynosi 30,3 km/s, zaś w aphelium 29,3 km/s, 
+                        dlatego lato (aphelium około 3 lipca) jest trochę dłuższe od zimy (peryhelium około 3 stycznia).
+                      </p>
+                    </div>
+                    <div class = animation>
+                      <div>
+                          <div id = 'form2'>
+                            <p>
+                                <button onclick="second_law()">Start</button>
+                            </p>
+                            <p> Prędkość Planety w danej chwili : <b id = "speed"></b> </p> 
+                          </div>
+                          <div id = 'secondLawAnimation'>
+                              <canvas id="canvas2" width="1050px" height="620px" style="z-index:0;"></canvas>
+                              <canvas id="canvas3" width="1050px" height="620px" style="z-index:2;margin-top:-620px;" ></canvas>
+                          </div>
+                      </div>
+                    </div>
+                </article>
+                <!------------------------------->
+                <article class = "article">
+                    <header id="header4">III prawo Keplera</header>
+                    <div class = "article_content" id = "third_law">
+                      <p class = "article_text">Sześciany półosi wielkich orbit dowolnych dwóch planet mają się do siebie jak kwadraty ich okresów obiegu.</p>
+                      <img id = "equation" src="../images/3_prawo.png">
+                    </div>
+                </article>
+                <!------------------------------->
+              </div>
+            </div>
+            <footer id="footer">Wojciech Jedraski</footer>
+        </div>
+    </body>
+</html>
